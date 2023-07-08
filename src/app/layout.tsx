@@ -28,9 +28,9 @@ type PropsWithChildren = {
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
-      // Your layout content here
+      // MAIN LAYOUT
       {children}
-      // Or here
+      // MAIN LAYOUT
     </>
   )
 }
