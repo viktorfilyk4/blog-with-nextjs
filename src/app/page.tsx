@@ -1,9 +1,17 @@
 import Image from 'next/image'
+import HelloWorld from './hello.mdx'
+import { MDXRemote } from 'next-mdx-remote/rsc'
 
-export default function Page() {
+export default async function Page() {
+  const res = await fetch(process.env.MARKDOWN_URL as string)
+  console.log(process.env.MARKDOWN_URL)
+  const markdown = await res.text()
+  console.log('TEST')
+  return <MDXRemote source={markdown} />
   return (
-    <>Hello!</>
-
+    <>Hello!
+      <HelloWorld />
+    </>
 
 
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
