@@ -21,11 +21,7 @@
 //   )
 // }
 
-type PropsWithChildren = {
-  children: any
-}
-
-export default function Layout({ children }: PropsWithChildren) {
+export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
       // MAIN LAYOUT
