@@ -1,4 +1,4 @@
 export type Post = {
-  slug: string
   body: string
+  [key: string]: any
 }
