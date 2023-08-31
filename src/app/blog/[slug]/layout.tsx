@@ -1,10 +1,4 @@
-
-
-type PropsWithChildren = {
-  children: any
-}
-
-export default function BlogLayout({ children }: PropsWithChildren) {
+export default function BlogLayout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
       {children}

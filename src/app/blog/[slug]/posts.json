@@ -1,0 +1,10 @@
+{
+  "baseUrl": "https://raw.githubusercontent.com/MaxLeiter/maxleiter.com/master/posts/",
+  "posts": [
+    "hacker-sites",
+    "framework",
+    "introducing-drift",
+    "mac-setup",
+    "mobile-browsers-resizing-font"
+  ]
+}

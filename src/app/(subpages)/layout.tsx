@@ -1,10 +1,6 @@
 import Header from './components/header'
 
-type PropsWithChildren = {
-  children: any
-}
-
-export default function SubLayout({ children }: PropsWithChildren) {
+export default function SubLayout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
       <Header />

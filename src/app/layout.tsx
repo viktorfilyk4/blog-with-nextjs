@@ -1,4 +1,5 @@
-// import './globals.css'
+import './globals.css'
+// import "@code-hike/mdx/dist/index.css"
 // import type { Metadata } from 'next'
 // import { Inter } from 'next/font/google'
 
@@ -21,11 +22,7 @@
 //   )
 // }
 
-type PropsWithChildren = {
-  children: any
-}
-
-export default function Layout({ children }: PropsWithChildren) {
+export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
       // MAIN LAYOUT
