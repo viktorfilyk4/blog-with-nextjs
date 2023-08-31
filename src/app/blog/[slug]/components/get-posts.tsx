@@ -14,9 +14,10 @@ export const getPosts = cache(async () => {
   return Promise.all(
     posts
       .map(async (post) => {
-        const postUrl = baseUrl + post + '.mdx'
-        const response = await fetch(postUrl)
-        const postContent = await response.text()
+        // const postUrl = baseUrl + post + '.mdx'
+        // const response = await fetch(postUrl)
+        // const postContent = await response.text()
+        const postContent = await fs.readFile('./src/app/blog/[slug]/default-post.mdx')
         const { data, content } = matter(postContent)
 
         if (data.published === false) {
