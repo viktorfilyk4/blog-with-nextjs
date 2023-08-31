@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { MDXComponents } from 'mdx/types'
+import { Code } from 'bright'
 
 export const mdxComponents: MDXComponents = {
   a: ({ children, ...props }) => {
@@ -15,5 +16,5 @@ export const mdxComponents: MDXComponents = {
     // See the details below for my solution.
     return <Image {...props} />
   },
-  // any other components you want to use in your markdown
+  pre: Code
 }

@@ -6,7 +6,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
  // @ts-ignore
 import remarkA11yEmoji from '@fec/remark-a11y-emoji'
 import remarkToc from 'remark-toc'
-// import { mdxComponents } from './markdown-components'
+import { mdxComponents } from './markdown-components'
 
 export function PostBody({ children }: { children: string }) {
   return (
@@ -26,7 +26,7 @@ export function PostBody({ children }: { children: string }) {
           rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
         },
       }}
-      // components={mdxComponents}
+      components={mdxComponents}
     />
   )
 }
