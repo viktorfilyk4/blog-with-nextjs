@@ -1,5 +1,5 @@
-import { getPost } from "./components/get-posts"
-import { PostBody } from "./components/post-body"
+import { getPost } from './components/get-posts'
+import { PostBody } from './components/post-body'
 import { notFound } from 'next/navigation'
 
 export default async function Blog({ params }: { params: { slug: string } }) {
