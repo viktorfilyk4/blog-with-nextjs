@@ -12,7 +12,7 @@ export default async function Page() {
   return (
     <>
       <div>
-        <h1>Viktor Filyk</h1>
+        <h1 className='border-gray-900 px-5'>Viktor Filyk</h1>
         <h2>Full stack developer</h2>
       </div>
       <div>
