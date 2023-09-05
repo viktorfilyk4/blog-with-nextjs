@@ -2,11 +2,46 @@ import Image from 'next/image'
 import HelloWorld from './hello.mdx'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { getPost, getPosts } from './blog/[slug]/components/get-posts'
+import { Sun, Moon, GitHub, Mail, Rss } from 'react-feather'
+import Project from './components/project'
+import { Role } from './types'
+import Post from './components/post'
+import HomeFooter from './components/footer'
 
 export default async function Page() {
   return (
     <>
-      Hello!
+      <div>
+        <h1>Viktor Filyk</h1>
+        <h2>Full stack developer</h2>
+      </div>
+      <div>
+        <Sun /><Moon /><GitHub /><Mail /><Rss />
+      </div>
+      <div>
+        <h3>About me</h3>
+        <p>Some text here about me</p>
+      </div>
+      <div>
+        <h3>My projects</h3>
+        <div>
+          <Project name='Test Name' role={Role.Creator} stars={154} description='some text...' />
+          <Project name='Test Name' role={Role.Maintainer} stars={154} description='some text...' />
+          <Project name='Test Name' role={Role.Creator} stars={154} description='some text...' />
+        </div>
+        <div>See more on <a href="#">this page</a></div>
+      </div>
+      <div>
+        <h3>My posts</h3>
+        <div>
+          <ul>
+            <li><Post date="23 Jan, 2023" title="Post title" /></li>
+            <li><Post date="23 Jan, 2023" title="Post title" /></li>
+            <li><Post date="23 Jan, 2023" title="Post title" /></li>
+          </ul>
+        </div>
+      </div>
+      <HomeFooter />
     </>
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
