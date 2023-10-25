@@ -1,4 +1,5 @@
 import { Role } from "../types"
+import ProjectBadge from "./project-badge"
 
 type ProjectProps = {
   name: string
@@ -12,8 +13,7 @@ export default function Project({ name, role, stars, description }: ProjectProps
     <div>
       <div>
         <a href="#">{name}</a>
-        <div>{role}</div>
-        <div>{stars}</div>
+        <ProjectBadge role={role} />
       </div>
       <p>{description}</p>
     </div>

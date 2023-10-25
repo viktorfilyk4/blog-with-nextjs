@@ -7,23 +7,30 @@ import Project from './components/project'
 import { Role } from './types'
 import Post from './components/post'
 import HomeFooter from './components/footer'
+import HeaderIcon from './components/header-icon'
 
 export default async function Page() {
   return (
-    <>
-      <div>
-        <h1 className='border-gray-900 px-5'>Viktor Filyk</h1>
-        <h2>Full stack developer</h2>
+    <div className='container mx-auto px-4'>
+      <div className='pb-4'>
+        <div className='pt-10 pb-4'>
+          <h1 className='border-gray-900 text-4xl font-bold'>Viktor Filyk</h1>
+          <h2 className='text-lg'>Full stack developer</h2>
+        </div>
+        <div className='flex gap-x-4'>
+          <HeaderIcon IconComponent={Sun} />
+          <HeaderIcon IconComponent={Moon}  />
+          <HeaderIcon IconComponent={GitHub} url="https://github.com" />
+          <HeaderIcon IconComponent={Mail}  />
+          <HeaderIcon IconComponent={Rss}  />
+        </div>
+      </div>
+      <div className='py-4'>
+        <h3 className='text-2xl font-bold pb-2'>About me</h3>
+        <p>I've previously worked at Blend and am currently building at Vercel. I'm interested in politics, tech, and building a fast, accessible web.</p>
       </div>
       <div>
-        <Sun /><Moon /><GitHub /><Mail /><Rss />
-      </div>
-      <div>
-        <h3>About me</h3>
-        <p>Some text here about me</p>
-      </div>
-      <div>
-        <h3>My projects</h3>
+        <h3 className='text-2xl font-bold'>My projects</h3>
         <div>
           <Project name='Test Name' role={Role.Creator} stars={154} description='some text...' />
           <Project name='Test Name' role={Role.Maintainer} stars={154} description='some text...' />
@@ -42,7 +49,7 @@ export default async function Page() {
         </div>
       </div>
       <HomeFooter />
-    </>
+    </div>
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
     //     <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
