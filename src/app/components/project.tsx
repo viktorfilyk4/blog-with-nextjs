@@ -1,28 +1,28 @@
-import { Role } from "../types"
-import ProjectBadgeGithub from "./project-badge-github"
-import ProjectBadgeRole from "./project-badge-role"
-import ProjectBadgeYears from "./project-badge-years"
+import { type ProjectBadgeProps } from "../lib/types"
+import ProjectBadge from "./project-badge"
 
 type ProjectProps = {
-  name: string
-  role: Role
-  stars: number
+  title: string
+  url: string
+  badges: Array<ProjectBadgeProps>
   description: string
 }
 
 export default function Project({
-  name,
-  role,
-  stars,
-  description,
+  title,
+  url,
+  badges,
+  description
 }: ProjectProps) {
   return (
     <div>
-      <div>
-        <a href='#'>{name}</a>
-        <ProjectBadgeRole role='Maintainer' />
-        <ProjectBadgeYears yearsOfActivity='2022' />
-        <ProjectBadgeGithub starsCount={123} repositoryUrl="https://github.com" />
+      <div className="flex">
+        <a href={url}>{title}</a>
+        <div>
+          {badges.map((badge) => (
+            <ProjectBadge innerContent={badge.innerContent} />
+          ))}
+        </div>
       </div>
       <p>{description}</p>
     </div>

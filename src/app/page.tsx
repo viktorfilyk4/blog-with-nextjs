@@ -1,15 +1,54 @@
-import Image from 'next/image'
-import HelloWorld from './hello.mdx'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import { getPost, getPosts } from './blog/[slug]/components/get-posts'
-import { Sun, Moon, GitHub, Mail, Rss } from 'react-feather'
-import Project from './components/project'
-import { Role } from './types'
-import Post from './components/post'
-import HomeFooter from './components/footer'
-import HeaderIcon from './components/header-icon'
+import Image from "next/image"
+import HelloWorld from "./hello.mdx"
+import { MDXRemote } from "next-mdx-remote/rsc"
+import { getPost, getPosts } from "./blog/[slug]/components/get-posts"
+import { Sun, Moon, GitHub, Mail, Rss } from "react-feather"
+import Project from "./components/project"
+import { Role } from "./types"
+import Post from "./components/post"
+import HomeFooter from "./components/footer"
+import HeaderIcon from "./components/header-icon"
 
 export default async function Page() {
+  const mockProjects = [
+    {
+      title: "Vercel AI SDK",
+      url: "https://github.com",
+      badges: [
+        { innerContent: "Maintainer" },
+        {
+          innerContent: {
+            starsCount: 4385,
+            url: "https://github.com",
+          }
+        }
+      ],
+      description: "Build AI-powered applications with React, Svelte, and Vue"
+    },
+    {
+      title: "Drift",
+      url: "https://google.com",
+      badges: [
+        { innerContent: "Creator" },
+        {
+          innerContent: {
+            starsCount: 1214,
+            url: "https://google.com",
+          }
+        }
+      ],
+      description: "A self-hostable and open-source alternative to GitHub Gist and Pastebin."
+    },
+    {
+      title: 'X11 on iOS',
+      url: "https://apple.com",
+      badges: [
+        { innerContent: "Creator" }
+      ],
+      description: "Patched, compiled, and packaged X11 for iOS devices."
+    }
+  ]
+
   return (
     <div className='container mx-auto px-4'>
       <div className='pb-4'>
@@ -19,32 +58,43 @@ export default async function Page() {
         </div>
         <div className='flex gap-x-4'>
           <HeaderIcon IconComponent={Sun} />
-          <HeaderIcon IconComponent={Moon}  />
-          <HeaderIcon IconComponent={GitHub} url="https://github.com" />
-          <HeaderIcon IconComponent={Mail}  />
-          <HeaderIcon IconComponent={Rss}  />
+          <HeaderIcon IconComponent={Moon} />
+          <HeaderIcon IconComponent={GitHub} url='https://github.com' />
+          <HeaderIcon IconComponent={Mail} />
+          <HeaderIcon IconComponent={Rss} />
         </div>
       </div>
       <div className='py-4'>
         <h3 className='text-2xl font-bold pb-2'>About me</h3>
-        <p>I've previously worked at Blend and am currently building at Vercel. I'm interested in politics, tech, and building a fast, accessible web.</p>
+        <p>
+          I've previously worked at Blend and am currently building at Vercel.
+          I'm interested in politics, tech, and building a fast, accessible web.
+        </p>
       </div>
       <div>
         <h3 className='text-2xl font-bold'>My projects</h3>
         <div>
-          <Project name='Test Name' role={Role.Creator} stars={154} description='some text...' />
-          <Project name='Test Name' role={Role.Maintainer} stars={154} description='some text...' />
-          <Project name='Test Name' role={Role.Creator} stars={154} description='some text...' />
+          {mockProjects.map(pr => {
+            return <Project {...pr} />
+          })}
         </div>
-        <div>See more on <a href="#">this page</a></div>
+        <div>
+          See more on <a href='#'>this page</a>
+        </div>
       </div>
       <div>
         <h3>My posts</h3>
         <div>
           <ul>
-            <li><Post date="23 Jan, 2023" title="Post title" /></li>
-            <li><Post date="23 Jan, 2023" title="Post title" /></li>
-            <li><Post date="23 Jan, 2023" title="Post title" /></li>
+            <li>
+              <Post date='23 Jan, 2023' title='Post title' />
+            </li>
+            <li>
+              <Post date='23 Jan, 2023' title='Post title' />
+            </li>
+            <li>
+              <Post date='23 Jan, 2023' title='Post title' />
+            </li>
           </ul>
         </div>
       </div>
