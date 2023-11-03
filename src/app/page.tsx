@@ -9,6 +9,7 @@ import HomeFooter from "./components/footer"
 import HeaderIcon from "./components/header-icon"
 
 // just a comment
+// just a commnt 2
 
 export default async function Page() {
   const mockProjects = [
