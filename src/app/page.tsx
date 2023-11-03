@@ -1,13 +1,104 @@
-import Image from 'next/image'
-import HelloWorld from './hello.mdx'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import { getPost, getPosts } from './blog/[slug]/components/get-posts'
+import Image from "next/image"
+import HelloWorld from "./hello.mdx"
+import { MDXRemote } from "next-mdx-remote/rsc"
+import { getPost, getPosts } from "./blog/[slug]/components/get-posts"
+import { Sun, Moon, GitHub, Mail, Rss } from "react-feather"
+import Project from "./components/project"
+import Post from "./components/post"
+import HomeFooter from "./components/footer"
+import HeaderIcon from "./components/header-icon"
 
 export default async function Page() {
+  const mockProjects = [
+    {
+      title: "Vercel AI SDK",
+      url: "https://github.com",
+      badges: [
+        { innerContent: "Maintainer" },
+        {
+          innerContent: {
+            starsCount: 4385,
+            url: "https://github.com",
+          }
+        }
+      ],
+      description: "Build AI-powered applications with React, Svelte, and Vue"
+    },
+    {
+      title: "Drift",
+      url: "https://google.com",
+      badges: [
+        { innerContent: "Creator" },
+        {
+          innerContent: {
+            starsCount: 1214,
+            url: "https://google.com",
+          }
+        }
+      ],
+      description: "A self-hostable and open-source alternative to GitHub Gist and Pastebin."
+    },
+    {
+      title: 'X11 on iOS',
+      url: "https://apple.com",
+      badges: [
+        { innerContent: "Creator" }
+      ],
+      description: "Patched, compiled, and packaged X11 for iOS devices."
+    }
+  ]
+
   return (
-    <>
-      Hello!
-    </>
+    <div className='container mx-auto px-4'>
+      <div className='pb-4'>
+        <div className='pt-10 pb-4'>
+          <h1 className='border-gray-900 text-4xl font-bold'>Viktor Filyk</h1>
+          <h2 className='text-lg'>Full stack developer</h2>
+        </div>
+        <div className='flex gap-x-4'>
+          <HeaderIcon IconComponent={Sun} />
+          <HeaderIcon IconComponent={Moon} />
+          <HeaderIcon IconComponent={GitHub} url='https://github.com' />
+          <HeaderIcon IconComponent={Mail} />
+          <HeaderIcon IconComponent={Rss} />
+        </div>
+      </div>
+      <div className='py-4'>
+        <h3 className='text-2xl font-bold pb-2'>About me</h3>
+        <p>
+          I've previously worked at Blend and am currently building at Vercel.
+          I'm interested in politics, tech, and building a fast, accessible web.
+        </p>
+      </div>
+      <div>
+        <h3 className='text-2xl font-bold'>My projects</h3>
+        <div>
+          {mockProjects.map(pr => {
+            return <Project {...pr} />
+          })}
+        </div>
+        <div>
+          See more on <a href='#'>this page</a>
+        </div>
+      </div>
+      <div>
+        <h3>My posts</h3>
+        <div>
+          <ul>
+            <li>
+              <Post date='23 Jan, 2023' title='Post title' />
+            </li>
+            <li>
+              <Post date='23 Jan, 2023' title='Post title' />
+            </li>
+            <li>
+              <Post date='23 Jan, 2023' title='Post title' />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <HomeFooter />
+    </div>
     // <main className="flex min-h-screen flex-col items-center justify-between p-24">
     //   <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
     //     <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
