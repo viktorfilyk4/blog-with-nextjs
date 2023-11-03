@@ -19,8 +19,8 @@ export default function Project({
       <div className="flex">
         <a href={url}>{title}</a>
         <div>
-          {badges.map((badge) => (
-            <ProjectBadge innerContent={badge.innerContent} />
+          {badges.map((badge, i) => (
+            <ProjectBadge key={i} innerContent={badge.innerContent} />
           ))}
         </div>
       </div>
