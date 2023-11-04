@@ -10,7 +10,6 @@ import HeaderIcon from "./components/header-icon"
 
 // just a comment
 // just a commnt 2
-// trigger push
 
 export default async function Page() {
   const mockProjects = [
