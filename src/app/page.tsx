@@ -1,15 +1,12 @@
 import Image from "next/image"
 import HelloWorld from "./hello.mdx"
 import { MDXRemote } from "next-mdx-remote/rsc"
-import { getPost, getPosts } from "./blog/[slug]/components/get-posts"
+import { getPost, getPosts } from "./blog/[slug]/_components/get-posts"
 import { Sun, Moon, GitHub, Mail, Rss } from "react-feather"
-import Project from "./components/project"
-import Post from "./components/post"
-import HomeFooter from "./components/footer"
-import HeaderIcon from "./components/header-icon"
-
-// just a comment
-// just a commnt 2
+import Project from "./_components/project"
+import Post from "./_components/post"
+import HomeFooter from "./_components/footer"
+import HeaderIcon from "./_components/header-icon"
 
 export default async function Page() {
   const mockProjects = [
@@ -21,7 +18,7 @@ export default async function Page() {
         {
           innerContent: {
             starsCount: 4385,
-            url: "https://github.com",
+            url: "https://github.com"
           }
         }
       ],
@@ -35,18 +32,17 @@ export default async function Page() {
         {
           innerContent: {
             starsCount: 1214,
-            url: "https://google.com",
+            url: "https://google.com"
           }
         }
       ],
-      description: "A self-hostable and open-source alternative to GitHub Gist and Pastebin."
+      description:
+        "A self-hostable and open-source alternative to GitHub Gist and Pastebin."
     },
     {
-      title: 'X11 on iOS',
+      title: "X11 on iOS",
       url: "https://apple.com",
-      badges: [
-        { innerContent: "Creator" }
-      ],
+      badges: [{ innerContent: "Creator" }],
       description: "Patched, compiled, and packaged X11 for iOS devices."
     }
   ]
@@ -76,7 +72,7 @@ export default async function Page() {
       <div>
         <h3 className='text-2xl font-bold'>My projects</h3>
         <div>
-          {mockProjects.map(pr => {
+          {mockProjects.map((pr) => {
             return <Project {...pr} />
           })}
         </div>

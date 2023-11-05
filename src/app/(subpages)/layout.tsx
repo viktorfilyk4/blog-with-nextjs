@@ -1,4 +1,4 @@
-import Header from './components/header'
+import Header from './_components/header'
 
 export default function SubLayout({ children }: React.PropsWithChildren<{}>) {
   return (

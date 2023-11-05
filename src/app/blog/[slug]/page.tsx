@@ -1,8 +1,12 @@
-import { getPost } from './components/get-posts'
-import { PostBody } from './components/post-body'
-import { notFound } from 'next/navigation'
+import { getPost } from "./_components/get-posts"
+import { PostBody } from "./_components/post-body"
+import { notFound } from "next/navigation"
 
-export default async function Blog({ params }: { params: { slug: string } }) {
+export default async function SlugBlog({
+  params
+}: {
+  params: { slug: string }
+}) {
   const post = await getPost(params.slug)
   if (!post) return notFound()
 

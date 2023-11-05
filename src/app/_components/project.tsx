@@ -1,4 +1,4 @@
-import { type ProjectBadgeProps } from "../lib/types"
+import { type ProjectBadgeProps } from "../_lib/types"
 import ProjectBadge from "./project-badge"
 
 type ProjectProps = {
@@ -16,7 +16,7 @@ export default function Project({
 }: ProjectProps) {
   return (
     <div>
-      <div className="flex">
+      <div className='flex'>
         <a href={url}>{title}</a>
         <div>
           {badges.map((badge, i) => (
