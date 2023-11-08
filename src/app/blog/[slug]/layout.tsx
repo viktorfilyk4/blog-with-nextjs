@@ -1,4 +1,4 @@
-export default function BlogLayout({ children }: React.PropsWithChildren<{}>) {
+export default function BlogLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       {children}
