@@ -1,13 +1,10 @@
-import Image from "next/image"
-import HelloWorld from "./hello.mdx"
-import { MDXRemote } from "next-mdx-remote/rsc"
-import { getPost, getPosts } from "./blog/[slug]/_components/get-posts"
-import { Sun, Moon, GitHub, Mail, Rss } from "react-feather"
+import { GitHub, Mail, Rss } from "react-feather"
 import Project from "./_components/project"
 import Post from "./_components/post"
 import HomeFooter from "./_components/footer"
-import HeaderIcon from "./_components/header-icon" 
+import SocialIcon from "./_components/social-icon"
 import { projects } from "./_lib/mocks"
+import DarkMode from "./_components/dark-mode-toggle"
 
 export default async function Page() {
   return (
@@ -18,13 +15,13 @@ export default async function Page() {
           <h2 className='text-lg'>Full stack developer</h2>
         </div>
         <div className='flex gap-x-4'>
-          <HeaderIcon IconComponent={Sun} />
-          <HeaderIcon IconComponent={Moon} />
-          <HeaderIcon IconComponent={GitHub} url='https://github.com' />
-          <HeaderIcon IconComponent={Mail} />
-          <HeaderIcon IconComponent={Rss} />
+          <DarkMode />
+          <SocialIcon IconComponent={GitHub} url={`${process.env.GITHUB_LINK}`} />
+          <SocialIcon IconComponent={Mail} url={`mailto:${process.env.MAILTO_EMAIL}`} />
+          <SocialIcon IconComponent={Rss} url={`${process.env.DOMAIN}/feed.xml`} />
         </div>
       </div>
+      {/* everything above is finished (logic, not styles) */}
       <div className='py-4'>
         <h3 className='text-2xl font-bold pb-2'>About me</h3>
         <p>
