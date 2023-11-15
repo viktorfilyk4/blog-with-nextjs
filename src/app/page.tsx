@@ -1,7 +1,7 @@
 import { GitHub, Mail, Rss } from "react-feather"
 import Project from "./_components/project"
 import Post from "./_components/post"
-import HomeFooter from "./_components/footer"
+import HomeFooter from "./_components/home-footer"
 import SocialIcon from "./_components/social-icon"
 import { projects } from "./_lib/mocks"
 import DarkModeToggle from "./_components/dark-mode-toggle"
