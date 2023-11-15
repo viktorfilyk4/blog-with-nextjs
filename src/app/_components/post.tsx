@@ -1,15 +1,23 @@
+import Link from "next/link"
+import { ArrowUpRight } from "react-feather"
+
 type PostProps = {
   date: string
-  title: string
-  ref?: string
+  children: React.ReactNode
+  externalRef?: string
 }
 
-export default function Post({ date, title, ref }: PostProps) {
+export default function Post({ date, children, externalRef }: PostProps) {
   return (
-    <a href="#">
-      <span>{date}</span>
-      <span>{title}</span>
-      {ref && <a href={ref}>{ref}</a>}
-    </a>
+    <Link href='#' className='block p-6 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md'>
+      <div className='text-gray-500'>{date}</div>
+      <div className="text-lg font-bold dark:text-white">{children}</div>
+      {externalRef && (
+        <div className='flex text-sm text-gray-500'>
+          <span>{externalRef}</span>
+          <ArrowUpRight/>
+        </div>
+      )}
+    </Link>
   )
 }

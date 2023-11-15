@@ -16,8 +16,8 @@ type RootLayoutProps = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html className='' lang='en'>
-      <body className={inter.className + " dark:bg-gray-800"}>
+    <html lang='en' suppressHydrationWarning>
+      <body className={inter.className}>
         <NextThemesProvider>{children}</NextThemesProvider>
       </body>
     </html>

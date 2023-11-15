@@ -7,7 +7,7 @@ type SocialIconProps = {
 
 export default function SocialIcon({ IconComponent, url }: SocialIconProps) {
   return (
-    <a href={url}>
+    <a href={url} className='dark:text-gray-400'>
       <IconComponent />
     </a>
   )
