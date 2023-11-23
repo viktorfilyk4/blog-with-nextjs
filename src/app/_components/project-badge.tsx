@@ -17,7 +17,7 @@ export default function ProjectBadge({ innerContent }: ProjectBadgeProps) {
           href={innerContent.url}
           target='_blank'
           className={
-            badgeCommonStyles + " hover:bg-gray-300 hover:cursor-pointer dark:hover:bg-gray-500"
+            badgeCommonStyles + " hover:bg-gray-300 hover:cursor-pointer dark:hover:bg-gray-500 p-2"
           }
         >
           <Star className='inline-block text-gray-700 w-3.5 h-3.5 dark:text-gray-400' />{" "}

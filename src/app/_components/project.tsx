@@ -16,9 +16,9 @@ export default function Project({
 }: ProjectProps) {
   return (
     <div className="py-4">
-      <div className='flex'>
+      <div className='flex items-center max-[350px]:flex-col'>
         <a href={url} className='text-blue-500 text-xl font-bold hover:underline'>{title}</a>
-        <div>
+        <div className="px-2 flex gap-x-2 items-center">
           {badges.map((badge, i) => (
             <ProjectBadge key={i} innerContent={badge.innerContent} />
           ))}

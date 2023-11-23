@@ -3,7 +3,7 @@ import CurrentTime from "./current-time"
 
 export default function HomeFooter({}) {
   return (
-    <div className='flex py-6'>
+    <footer className='flex py-6 justify-between'>
       <div>
         <Link href='/about' className='text-blue-500 hover:underline flex-1'>
           About this site
@@ -14,6 +14,6 @@ export default function HomeFooter({}) {
         </Link>
       </div>
       <CurrentTime/>
-    </div>
+    </footer>
   )
 }
