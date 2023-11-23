@@ -46,16 +46,18 @@ export default async function Page() {
       </header>
       {/* main block */}
       <main>
-        <div className='py-4'>
-          <h3 className='text-2xl font-bold pb-2 dark:text-white'>About me</h3>
+        {/* About me section */}
+        <section className='py-4'>
+          <h2 className='text-2xl font-bold pb-2 dark:text-white'>About me</h2>
           <p className='dark:text-white'>
             I've previously worked at Blend and am currently building at Vercel.
             I'm interested in politics, tech, and building a fast, accessible
             web.
           </p>
-        </div>
-        <div>
-          <h3 className='text-2xl font-bold dark:text-white'>My projects</h3>
+        </section>
+        {/* My projects section */}
+        <section>
+          <h2 className='text-2xl font-bold dark:text-white'>My projects</h2>
           <div>
             {projects.map((pr) => {
               return <Project {...pr} />
@@ -67,9 +69,10 @@ export default async function Page() {
               this page
             </Link>
           </div>
-        </div>
-        <div>
-          <h3 className='text-2xl font-bold dark:text-white'>My posts</h3>
+        </section>
+        {/* My posts section */}
+        <section>
+          <h2 className='text-2xl font-bold dark:text-white'>My posts</h2>
           <div>
             <ul>
               <li>
@@ -89,7 +92,7 @@ export default async function Page() {
               </li>
             </ul>
           </div>
-        </div>
+        </section>
       </main>
       {/* footer */}
       <HomeFooter />
