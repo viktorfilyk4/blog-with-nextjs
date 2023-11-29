@@ -1,12 +1,13 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { MDXComponents } from 'mdx/types'
-import { Code } from 'bright'
+import Link from "next/link"
+import Image from "next/image"
+import { MDXComponents } from "mdx/types"
+import { Code } from "bright"
+import NoteComponent from "@/components/mdx/note"
 
 export const mdxComponents: MDXComponents = {
   a: ({ children, ...props }) => {
     return (
-      <Link {...props} href={props.href || ''}>
+      <Link {...props} href={props.href || ""}>
         {children}
       </Link>
     )
@@ -16,5 +17,7 @@ export const mdxComponents: MDXComponents = {
     // See the details below for my solution.
     return <Image {...props} />
   },
-  pre: Code
+  pre: Code,
+  Note: NoteComponent,
+  h1: (props) => <h1 {...props} className='text-xl' />
 }

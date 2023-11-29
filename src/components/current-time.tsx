@@ -1,6 +1,6 @@
 "use client"
 
-import { useCurrentTime } from "../_lib/hooks"
+import { useCurrentTime } from "../lib/hooks"
 
 export default function CurrentTime() {
   const [currentTime] = useCurrentTime()

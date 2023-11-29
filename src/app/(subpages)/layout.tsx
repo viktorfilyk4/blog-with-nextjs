@@ -1,6 +1,10 @@
-import Header from './_components/header'
+import Header from '../../components/app-router/(subpages)/header'
 
-export default function SubLayout({ children }: React.PropsWithChildren<{}>) {
+type SubpagesLayoutProps = {
+  children: React.ReactNode
+}
+
+export default function SubpagesLayout({ children }: SubpagesLayoutProps) {
   return (
     <>
       <Header />

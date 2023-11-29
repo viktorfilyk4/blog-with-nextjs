@@ -1,7 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { NextThemesProvider } from "./providers"
+import { NextThemesProvider } from "@/components/theme/providers"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -17,7 +17,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={inter.className + ' container mx-auto p-4 max-w-3xl'}>
+      <body className={inter.className + " container mx-auto p-4 max-w-3xl"}>
         <NextThemesProvider>{children}</NextThemesProvider>
       </body>
     </html>

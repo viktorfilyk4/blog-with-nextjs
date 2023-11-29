@@ -1,10 +1,10 @@
 import { GitHub, Mail, Rss } from "react-feather"
-import Project from "./_components/project"
-import Post from "./_components/post"
-import HomeFooter from "./_components/home-footer"
-import SocialIcon from "./_components/social-icon"
-import { projects } from "./_lib/mocks"
-import DarkModeToggle from "./_components/dark-mode-toggle"
+import Project from "../components/project"
+import Post from "../components/post"
+import HomeFooter from "../components/home-footer"
+import SocialIcon from "../components/social-icon"
+import { projects } from "../lib/mocks"
+import DarkModeToggle from "../components/theme/dark-mode-toggle"
 import Link from "next/link"
 
 export default async function Page() {
@@ -18,8 +18,8 @@ export default async function Page() {
           </h1>
           <h2 className='text-lg dark:text-white'>Full stack developer</h2>
         </div>
-        <nav className="flex items-center">
-          <ul className="flex gap-x-6">
+        <nav className='flex items-center'>
+          <ul className='flex gap-x-6'>
             <li>
               <DarkModeToggle />
             </li>

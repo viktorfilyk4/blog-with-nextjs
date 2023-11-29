@@ -9,7 +9,7 @@ type PostProps = {
 
 export default function Post({ date, children, externalRef }: PostProps) {
   return (
-    <Link href='#' className='block p-6 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md'>
+    <Link href='/blog/hacker-sites' className='block p-6 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-md'>
       <div className='text-gray-500'>{date}</div>
       <div className="text-lg font-bold dark:text-white">{children}</div>
       {externalRef && (
