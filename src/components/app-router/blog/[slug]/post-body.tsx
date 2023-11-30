@@ -11,23 +11,25 @@ type PostBodyProps = { children: React.ReactNode & string }
 
 export function PostBody({ children }: PostBodyProps) {
   return (
-    <MDXRemote
-      source={children}
-      options={{
-        mdxOptions: {
-          remarkPlugins: [
-            // Adds support for GitHub Flavored Markdown
-            remarkGfm,
-            // Makes emojis more accessible
-            remarkA11yEmoji,
-            // generates a table of contents based on headings
-            remarkToc
-          ],
-          // These work together to add IDs and linkify headings
-          rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
-        }
-      }}
-      components={mdxComponents}
-    />
+    <article className="prose dark:prose-invert">
+      <MDXRemote
+        source={children}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [
+              // Adds support for GitHub Flavored Markdown
+              remarkGfm,
+              // Makes emojis more accessible
+              remarkA11yEmoji,
+              // generates a table of contents based on headings
+              remarkToc
+            ],
+            // These work together to add IDs and linkify headings
+            rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings]
+          }
+        }}
+        components={mdxComponents}
+      />
+    </article>
   )
 }
