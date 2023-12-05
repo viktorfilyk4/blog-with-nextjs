@@ -11,7 +11,7 @@ export default async function BlogSlugPage({ params }: BlogSlugPage) {
   if (!post) return notFound()
 
   return (
-    <main>
+    <main className="py-4">
       <section>
         <div>
           <span className="block py-8">{post.date}</span>

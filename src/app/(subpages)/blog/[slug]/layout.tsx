@@ -1,4 +1,4 @@
-import BlogPostFooter from "../../../../components/app-router/blog/[slug]/blog-post-footer"
+import BlogPostFooter from "@/components/app-router/blog/[slug]/blog-post-footer"
 
 type BlogSlugLayoutProps = {
   children: React.ReactNode

@@ -17,7 +17,7 @@ export const mdxComponents: MDXComponents = {
   //   // See the details below for my solution.
   //   return <Image {...props} />
   // },
-  pre: (props) => (<Code {...props}/>),
+  pre: (props) => <Code {...props} />,
   Note: NoteComponent,
   // h1: (props) => <h1 {...props} className='text-xl' />
 }
