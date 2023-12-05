@@ -1,3 +1,5 @@
+// "prettier" cancels conflicting rules with ESlint
+
 {
   "extends": ["next/core-web-vitals", "prettier"]
 }
