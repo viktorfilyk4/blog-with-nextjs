@@ -1,16 +1,12 @@
-import Link from "next/link"
+import Link from 'next/link'
 
 type BlogPostFooterLinkProps = {
-  type: "Older" | "Newer"
+  type: 'Older' | 'Newer'
   title: string
   link: string
 }
 
-export default function BlogPostFooterLink({
-  type,
-  title,
-  link
-}: BlogPostFooterLinkProps) {
+export default function BlogPostFooterLink({ type, title, link }: BlogPostFooterLinkProps) {
   return (
     <li>
       <Link className='block hover:underline' href={link}>

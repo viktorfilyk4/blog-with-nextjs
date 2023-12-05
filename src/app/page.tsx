@@ -1,11 +1,11 @@
-import { GitHub, Mail, Rss } from "react-feather"
-import Project from "../components/project"
-import Post from "../components/post"
-import HomeFooter from "../components/home-footer"
-import SocialIcon from "../components/social-icon"
-import { projects } from "../lib/mocks"
-import DarkModeToggle from "../components/theme/dark-mode-toggle"
-import Link from "next/link"
+import { GitHub, Mail, Rss } from 'react-feather'
+import Project from '../components/project'
+import Post from '../components/post'
+import HomeFooter from '../components/home-footer'
+import SocialIcon from '../components/social-icon'
+import { projects } from '../lib/mocks'
+import DarkModeToggle from '../components/theme/dark-mode-toggle'
+import Link from 'next/link'
 
 export default async function Page() {
   return (
@@ -13,9 +13,7 @@ export default async function Page() {
       {/* header */}
       <header className='pb-4 md:flex md:justify-between'>
         <div className='pt-10 pb-4'>
-          <h1 className='border-gray-900 text-4xl font-bold text-blue-500'>
-            Viktor Filyk
-          </h1>
+          <h1 className='border-gray-900 text-4xl font-bold text-blue-500'>Viktor Filyk</h1>
           <h2 className='text-lg dark:text-white'>Full stack developer</h2>
         </div>
         <nav className='flex items-center'>
@@ -24,22 +22,13 @@ export default async function Page() {
               <DarkModeToggle />
             </li>
             <li>
-              <SocialIcon
-                IconComponent={GitHub}
-                url={`${process.env.GITHUB_LINK}`}
-              />
+              <SocialIcon IconComponent={GitHub} url={`${process.env.GITHUB_LINK}`} />
             </li>
             <li>
-              <SocialIcon
-                IconComponent={Mail}
-                url={`mailto:${process.env.MAILTO_EMAIL}`}
-              />
+              <SocialIcon IconComponent={Mail} url={`mailto:${process.env.MAILTO_EMAIL}`} />
             </li>
             <li>
-              <SocialIcon
-                IconComponent={Rss}
-                url={`${process.env.DOMAIN}/feed.xml`}
-              />
+              <SocialIcon IconComponent={Rss} url={`${process.env.DOMAIN}/feed.xml`} />
             </li>
           </ul>
         </nav>
@@ -50,9 +39,8 @@ export default async function Page() {
         <section className='py-4'>
           <h2 className='text-2xl font-bold pb-2 dark:text-white'>About me</h2>
           <p className='dark:text-white'>
-            I've previously worked at Blend and am currently building at Vercel.
-            I'm interested in politics, tech, and building a fast, accessible
-            web.
+            I've previously worked at Blend and am currently building at Vercel. I'm interested in
+            politics, tech, and building a fast, accessible web.
           </p>
         </section>
         {/* My projects section */}
@@ -64,7 +52,7 @@ export default async function Page() {
             })}
           </div>
           <div className='py-4 dark:text-white'>
-            See more on{" "}
+            See more on{' '}
             <Link href='/projects' className='text-blue-500 hover:underline'>
               this page
             </Link>

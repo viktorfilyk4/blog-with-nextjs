@@ -1,6 +1,6 @@
-export default function Projects({  }) {
+export default function Projects({}) {
   return (
-    <div className="">
+    <div className=''>
       <h1>PROJECTS PAGE</h1>
     </div>
   )

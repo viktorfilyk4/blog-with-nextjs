@@ -1,5 +1,5 @@
-import { type ProjectBadgeProps } from "../lib/types"
-import ProjectBadge from "./project-badge"
+import { type ProjectBadgeProps } from '../lib/types'
+import ProjectBadge from './project-badge'
 
 type ProjectProps = {
   title: string
@@ -8,19 +8,11 @@ type ProjectProps = {
   description: string
 }
 
-export default function Project({
-  title,
-  url,
-  badges,
-  description
-}: ProjectProps) {
+export default function Project({ title, url, badges, description }: ProjectProps) {
   return (
     <div className='py-4'>
       <div className='flex items-center max-[350px]:flex-col'>
-        <a
-          href={url}
-          className='text-blue-500 text-xl font-bold hover:underline'
-        >
+        <a href={url} className='text-blue-500 text-xl font-bold hover:underline'>
           {title}
         </a>
         <div className='px-2 flex gap-x-2 items-center'>

@@ -3,7 +3,7 @@ export type Post = {
   [key: string]: string
 }
 
-// Below types are used in React components 
+// Below types are used in React components
 
 export type ProjectBadgeProps = {
   innerContent:

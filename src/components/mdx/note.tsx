@@ -1,4 +1,4 @@
-import { Info } from "react-feather"
+import { Info } from 'react-feather'
 
 type NoteComponentProps = {
   children: string

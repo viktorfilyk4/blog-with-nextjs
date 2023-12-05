@@ -1,6 +1,6 @@
-import DarkModeToggle from "@/components/theme/dark-mode-toggle"
-import Link from "next/link"
-import { Home as HomeIcon } from "react-feather"
+import DarkModeToggle from '@/components/theme/dark-mode-toggle'
+import Link from 'next/link'
+import { Home as HomeIcon } from 'react-feather'
 
 export default function Header() {
   return (
