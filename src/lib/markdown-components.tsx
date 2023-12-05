@@ -5,6 +5,7 @@ import Note from '@/components/mdx/Note'
 // hello
 // hello 2
 // hello 3
+// hello 3
 
 export const mdxComponents: MDXComponents = {
   // a: ({ children, ...props }) => {
