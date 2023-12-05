@@ -3,6 +3,7 @@ import { Code } from 'bright'
 import Note from '@/components/mdx/Note'
 
 // hello
+// hello 2
 
 export const mdxComponents: MDXComponents = {
   // a: ({ children, ...props }) => {
