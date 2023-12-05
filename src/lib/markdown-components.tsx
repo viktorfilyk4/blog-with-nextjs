@@ -2,6 +2,8 @@ import { MDXComponents } from 'mdx/types'
 import { Code } from 'bright'
 import Note from '@/components/mdx/Note'
 
+// hello
+
 export const mdxComponents: MDXComponents = {
   // a: ({ children, ...props }) => {
   //   return (
