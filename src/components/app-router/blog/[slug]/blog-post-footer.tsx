@@ -3,7 +3,7 @@ import BlogPostFooterLink from './blog-post-footer-link'
 
 export default function BlogPostFooter() {
   return (
-    <footer className='py-8 border-t border-solid border-t-gray-200'>
+    <footer className='border-t border-solid border-t-gray-200 py-8'>
       <p>
         Thanks for reading! If you want to see future content, you can follow me on Twitter or
         subscribe to my RSS feed.

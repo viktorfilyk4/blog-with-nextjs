@@ -12,7 +12,7 @@ export default async function Page() {
     <>
       {/* header */}
       <header className='pb-4 md:flex md:justify-between'>
-        <div className='pt-10 pb-4'>
+        <div className='pb-4 pt-10'>
           <h1 className='border-gray-900 text-4xl font-bold text-blue-500'>Viktor Filyk</h1>
           <h2 className='text-lg dark:text-white'>Full stack developer</h2>
         </div>
@@ -37,7 +37,7 @@ export default async function Page() {
       <main>
         {/* About me section */}
         <section className='py-4'>
-          <h2 className='text-2xl font-bold pb-2 dark:text-white'>About me</h2>
+          <h2 className='pb-2 text-2xl font-bold dark:text-white'>About me</h2>
           <p className='dark:text-white'>
             I've previously worked at Blend and am currently building at Vercel. I'm interested in
             politics, tech, and building a fast, accessible web.

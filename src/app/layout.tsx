@@ -17,7 +17,7 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={inter.className + ' container mx-auto p-4 max-w-3xl'}>
+      <body className={inter.className + ' container mx-auto max-w-3xl p-4'}>
         <NextThemesProvider>{children}</NextThemesProvider>
       </body>
     </html>

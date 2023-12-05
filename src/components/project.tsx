@@ -12,10 +12,10 @@ export default function Project({ title, url, badges, description }: ProjectProp
   return (
     <div className='py-4'>
       <div className='flex items-center max-[350px]:flex-col'>
-        <a href={url} className='text-blue-500 text-xl font-bold hover:underline'>
+        <a href={url} className='text-xl font-bold text-blue-500 hover:underline'>
           {title}
         </a>
-        <div className='px-2 flex gap-x-2 items-center'>
+        <div className='flex items-center gap-x-2 px-2'>
           {badges.map((badge, i) => (
             <ProjectBadge key={i} innerContent={badge.innerContent} />
           ))}
