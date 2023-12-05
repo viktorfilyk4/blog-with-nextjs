@@ -2,6 +2,8 @@ import { getPost } from '@/lib/get-posts'
 import { BlogPostBody } from '@/components/BlogPostBody'
 import { notFound } from 'next/navigation'
 
+// comment
+
 type BlogSlugPage = {
   params: { slug: string }
 }
@@ -17,7 +19,7 @@ export default async function BlogSlugPage({ params }: BlogSlugPage) {
           <span className='block py-8'>{post.date}</span>
         </div>
         <h1 className='pb-8 text-4xl font-bold'>{post.title}</h1>
-        <BlogPostBody children={post.body}></BlogPostBody>
+        <BlogPostBody>{post.body}</BlogPostBody>
       </section>
     </main>
   )
