@@ -1,5 +1,5 @@
 import { Star } from 'react-feather'
-import { type ProjectBadgeProps } from '../lib/types'
+import { type ProjectBadgeProps } from '@/lib/types'
 
 export default function ProjectBadge({ innerContent }: ProjectBadgeProps) {
   let badge

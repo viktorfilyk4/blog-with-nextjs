@@ -7,9 +7,9 @@ import remarkA11yEmoji from '@fec/remark-a11y-emoji'
 import remarkToc from 'remark-toc'
 import { mdxComponents } from '@/lib/markdown-components'
 
-type PostBodyProps = { children: React.ReactNode & string }
+type BlogPostBodyProps = { children: React.ReactNode & string }
 
-export function PostBody({ children }: PostBodyProps) {
+export function BlogPostBody({ children }: BlogPostBodyProps) {
   return (
     <article className='prose dark:prose-invert'>
       <MDXRemote

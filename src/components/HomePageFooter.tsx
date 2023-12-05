@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import CurrentTime from './current-time'
+import CurrentTime from './CurrentTime'
 
-export default function HomeFooter({}) {
+export default function HomePageFooter({}) {
   return (
     <footer className='flex justify-between py-6'>
       <div>

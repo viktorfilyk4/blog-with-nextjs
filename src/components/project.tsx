@@ -1,5 +1,5 @@
-import { type ProjectBadgeProps } from '../lib/types'
-import ProjectBadge from './project-badge'
+import { type ProjectBadgeProps } from '@/lib/types'
+import ProjectBadge from '@/components/ProjectBadge'
 
 type ProjectProps = {
   title: string

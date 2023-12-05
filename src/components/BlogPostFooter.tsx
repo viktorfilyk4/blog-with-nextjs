@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import BlogPostFooterLink from './blog-post-footer-link'
+import BlogPostFooterLink from './BlogPostFooterLink'
 
 export default function BlogPostFooter() {
   return (

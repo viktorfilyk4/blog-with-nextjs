@@ -1,8 +1,8 @@
-import DarkModeToggle from '@/components/theme/dark-mode-toggle'
+import DarkModeToggle from '@/components/theme/DarkModeToggle'
 import Link from 'next/link'
 import { Home as HomeIcon } from 'react-feather'
 
-export default function Header() {
+export default function SubpagesHeader() {
   return (
     <header>
       <nav>

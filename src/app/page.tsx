@@ -1,13 +1,13 @@
 import { GitHub, Mail, Rss } from 'react-feather'
-import Project from '../components/project'
-import Post from '../components/post'
-import HomeFooter from '../components/home-footer'
-import SocialIcon from '../components/social-icon'
-import { projects } from '../lib/mocks'
-import DarkModeToggle from '../components/theme/dark-mode-toggle'
+import Project from '@/components/Project'
+import Post from '@/components/Post'
+import HomePageFooter from '@/components/HomePageFooter'
+import SocialIcon from '@/components/SocialIcon'
+import { projects } from '@/lib/mocks'
+import DarkModeToggle from '@/components/theme/DarkModeToggle'
 import Link from 'next/link'
 
-export default async function Page() {
+export default async function RootPage() {
   return (
     <>
       {/* header */}
@@ -83,7 +83,7 @@ export default async function Page() {
         </section>
       </main>
       {/* footer */}
-      <HomeFooter />
+      <HomePageFooter />
     </>
   )
 }

@@ -1,10 +1,10 @@
 import { Info } from 'react-feather'
 
-type NoteComponentProps = {
+type NoteProps = {
   children: string
 }
 
-export default function NoteComponent({ children }: NoteComponentProps) {
+export default function Note({ children }: NoteProps) {
   return (
     <div className='not-prose relative my-4 border border-gray-200 bg-gray-100 px-6 py-4 text-black dark:border-gray-500 dark:bg-gray-600 dark:text-white'>
       <p className='font-bold'>Note:</p>
