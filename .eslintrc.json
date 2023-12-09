@@ -1,5 +1,6 @@
 // "prettier" cancels conflicting rules with ESlint
 
 {
-  "extends": ["next/core-web-vitals", "prettier"]
+  "extends": ["next/core-web-vitals", "prettier"],
+  "ignorePatterns": ["*.json", "**/*.json"]
 }
