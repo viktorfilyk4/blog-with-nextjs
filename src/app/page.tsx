@@ -39,16 +39,16 @@ export default async function RootPage() {
         <section className='py-4'>
           <h2 className='pb-2 text-2xl font-bold dark:text-white'>About me</h2>
           <p className='dark:text-white'>
-            I've previously worked at Blend and am currently building at Vercel. I'm interested in
-            politics, tech, and building a fast, accessible web.
+            I&apos;ve previously worked at Blend and am currently building at Vercel. I&apos;m
+            interested in politics, tech, and building a fast, accessible web.
           </p>
         </section>
         {/* My projects section */}
         <section>
           <h2 className='text-2xl font-bold dark:text-white'>My projects</h2>
           <div>
-            {projects.map((pr) => {
-              return <Project {...pr} />
+            {projects.map((pr, idx) => {
+              return <Project key={idx} {...pr} />
             })}
           </div>
           <div className='py-4 dark:text-white'>
@@ -65,17 +65,17 @@ export default async function RootPage() {
             <ul>
               <li>
                 <Post date='23 Jan, 2023'>
-                  Why your website's fonts might be larger than intended
+                  Why your website&apos;s fonts might be larger than intended
                 </Post>
               </li>
               <li>
                 <Post date='23 Jan, 2023'>
-                  Why your website's fonts might be larger than intended
+                  Why your website&apos;s fonts might be larger than intended
                 </Post>
               </li>
               <li>
                 <Post date='23 Jan, 2023' externalRef='https://vercel.com'>
-                  Why your website's fonts might be larger than intended
+                  Why your website&apos;s fonts might be larger than intended
                 </Post>
               </li>
             </ul>
