@@ -6,7 +6,7 @@ export default function CurrentTime() {
   const [currentTime] = useCurrentTime()
 
   return (
-    <div suppressHydrationWarning className='text-right dark:text-white'>
+    <div suppressHydrationWarning className='text-center text-gray-400'>
       {currentTime}
     </div>
   )

@@ -13,3 +13,13 @@ export function useCurrentTime(): [string] {
 
   return [currentTime]
 }
+
+export function useHasMounted(): boolean {
+  const [hasMounted, setHasMounted] = useState(false)
+
+  useEffect(() => {
+    setHasMounted(true)
+  }, [])
+
+  return hasMounted
+}

@@ -1,6 +1,6 @@
 import { MDXComponents } from 'mdx/types'
 import { Code } from 'bright'
-import Note from '@/components/mdx/Note'
+import Note from '@/components/mdx/note'
 
 export const mdxComponents: MDXComponents = {
   // a: ({ children, ...props }) => {
@@ -17,5 +17,13 @@ export const mdxComponents: MDXComponents = {
   // },
   pre: (props) => <Code {...props} />,
   Note: Note,
+  details: ({ children, ...props }) => (
+    <details
+      {...props}
+      className='rounded-2xl border border-solid bg-gray-200 p-4 hover:cursor-pointer'
+    >
+      {children}
+    </details>
+  ),
   // h1: (props) => <h1 {...props} className='text-xl' />
 }

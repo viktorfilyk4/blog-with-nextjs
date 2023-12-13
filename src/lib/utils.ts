@@ -3,6 +3,11 @@ export function getCurrentTime(): string {
   const hours = now.getHours()
   const minutes = now.getMinutes()
   const seconds = now.getUTCSeconds()
-  const day = now.getDay()
-  return `Ukraine - Day ${day} - ${hours}:${minutes}:${seconds} GMT+2`
+
+  let modifiedSeconds
+
+  if (seconds.toString().length < 2) modifiedSeconds = `0${seconds}`
+  else modifiedSeconds = seconds
+
+  return `Ukraine: ${hours}:${minutes}:${modifiedSeconds} (GMT+2)`
 }

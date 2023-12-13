@@ -1,31 +1,34 @@
 'use client'
 
+import { useHasMounted } from '@/lib/hooks'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
 import { Moon, Sun } from 'react-feather'
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import { Tooltip } from 'react-tooltip'
+
+const getTooltipText = (theme: string | undefined) =>
+  theme === 'dark' ? 'Light Mode' : 'Dark Mode'
 
 type DarkModeToggleProps = {}
 
 export default function DarkModeToggle({}: DarkModeToggleProps) {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  // const [tooltipText, setTooltipText] = useState(getTooltipText(theme))
+  const hasMounted = useHasMounted()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <Skeleton enableAnimation baseColor='#144ab5' />
+  const handleThemeChanging = (theme: string) => {
+    setTheme(theme)
+    // setTooltipText(getTooltipText(theme))
   }
 
   return (
     <button
-      className='dark:text-gray-400'
-      onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className='icon-custom'
+      onClick={() => handleThemeChanging(theme === 'dark' ? 'light' : 'dark')}
+      data-tooltip-id='tooltip-theme-toggler'
+      data-tooltip-content={getTooltipText(theme)}
     >
-      {theme === 'dark' ? <Sun /> : <Moon />}
+      {hasMounted && theme === 'dark' ? <Sun /> : <Moon />}
+      {<Tooltip id='tooltip-theme-toggler' />}
     </button>
   )
 }

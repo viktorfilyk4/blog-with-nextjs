@@ -1,15 +1,15 @@
 import DarkModeToggle from '@/components/theme/DarkModeToggle'
 import Link from 'next/link'
-import { Home as HomeIcon } from 'react-feather'
+import { Home } from 'react-feather'
 
 export default function SubpagesHeader() {
   return (
     <header>
       <nav>
-        <ul className='flex gap-x-4'>
+        <ul className='flex'>
           <li>
-            <Link href='/'>
-              <HomeIcon className='dark:text-gray-400' />
+            <Link href='/' className='icon-custom block'>
+              <Home />
             </Link>
           </li>
           <li>
