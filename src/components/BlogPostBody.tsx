@@ -5,7 +5,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 // @ts-ignore
 import remarkA11yEmoji from '@fec/remark-a11y-emoji'
 import remarkToc from 'remark-toc'
-import { mdxComponents } from '@/lib/markdown-components'
+import { mdxComponents } from '@/components/mdx/markdown-components'
 
 type BlogPostBodyProps = { children: React.ReactNode & string }
 
