@@ -12,10 +12,6 @@
   }
 
   .info-icon-custom > circle {
-    @apply fill-white;
+    @apply fill-white dark:fill-black;
   }
 }
-
-/* END UP with: */
-/* 1. Cannot commit because of errors with eslint step */
-/* 2. Was trying to pass styles to 'details' HTML node for MDX */
