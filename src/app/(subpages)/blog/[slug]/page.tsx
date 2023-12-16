@@ -15,7 +15,7 @@ export default async function BlogSlugPage({ params }: BlogSlugPage) {
       <section>
         <p className='block py-8'>{post.date}</p>
         <h1 className='pb-8 text-4xl font-bold'>{post.title}</h1>
-        <article className='prose dark:prose-invert'>
+        <article className='prose max-w-full dark:prose-invert'>
           <BlogPostBody>{post.body}</BlogPostBody>
         </article>
       </section>
