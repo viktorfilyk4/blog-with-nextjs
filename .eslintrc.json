@@ -2,5 +2,8 @@
 
 {
   "extends": ["next/core-web-vitals", "prettier"],
-  "ignorePatterns": ["*.json", "**/*.json"]
+  "ignorePatterns": ["*.json", "**/*.json"],
+  "rules": {
+    "no-unused-vars": "error"
+  }
 }
