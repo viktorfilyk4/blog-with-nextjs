@@ -1,26 +1,29 @@
-import Post from '../Post'
+import getPosts, { getExternalPosts, getPolishedPosts } from '@/lib/get-posts'
+import PostComponent from '../Post'
+import { type Post } from '@/lib/types'
+import fs from 'fs/promises'
 
-export default function PostsSection() {
+export default async function PostsSection() {
+  const posts = await getPosts()
+  const externalPosts = await getExternalPosts()
+  const polishedPosts = getPolishedPosts(posts, externalPosts)
+
   return (
     <section>
       <h3 className='text-2xl font-bold dark:text-gray-200'>My posts</h3>
       <div>
         <ul>
-          <li>
-            <Post date='23 Jan, 2023'>
-              Why your website&apos;s fonts might be larger than intended
-            </Post>
-          </li>
-          <li>
-            <Post date='23 Jan, 2023'>
-              Why your website&apos;s fonts might be larger than intended
-            </Post>
-          </li>
-          <li>
-            <Post date='23 Jan, 2023' externalRef='https://vercel.com'>
-              Why your website&apos;s fonts might be larger than intended
-            </Post>
-          </li>
+          {polishedPosts.map((p, i) => (
+            <li key={i}>
+              <PostComponent
+                date={p?.date as string}
+                slug={p?.slug as string}
+                externalRef={p?.href}
+              >
+                {p?.title}
+              </PostComponent>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
