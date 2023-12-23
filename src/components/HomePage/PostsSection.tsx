@@ -1,7 +1,5 @@
 import getPosts, { getExternalPosts, getPolishedPosts } from '@/lib/get-posts'
 import PostComponent from '../Post'
-import { type Post } from '@/lib/types'
-import fs from 'fs/promises'
 
 export default async function PostsSection() {
   const posts = await getPosts()

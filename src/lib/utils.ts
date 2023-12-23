@@ -11,3 +11,7 @@ export function getCurrentTime(): string {
 
   return `Ukraine: ${hours}:${minutes}:${modifiedSeconds} (GMT+2)`
 }
+
+export function removeNullsFromArray<T>(arr: Array<T>) {
+  return arr.filter((value) => value !== null)
+}
