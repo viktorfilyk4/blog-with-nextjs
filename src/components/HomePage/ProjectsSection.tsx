@@ -1,5 +1,5 @@
 import { projects } from '@/lib/mocks'
-import Project from '../project'
+import Project from '../Project'
 import Link from 'next/link'
 
 export default function ProjectsSection() {
