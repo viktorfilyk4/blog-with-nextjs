@@ -1,5 +1,5 @@
 // next.config.js
-const { remarkCodeHike } = require("@code-hike/mdx");
+const { remarkCodeHike } = require('@code-hike/mdx')
 
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
@@ -7,7 +7,7 @@ const withMDX = require('@next/mdx')({
     // If you use remark-gfm, you'll need to use next.config.mjs
     // as the package is ESM only
     // https://github.com/remarkjs/remark-gfm#install
-    remarkPlugins: [[remarkCodeHike, { theme: "github-dark", lineNumbers: false }]],
+    remarkPlugins: [[remarkCodeHike, { theme: 'github-dark', lineNumbers: false }]],
     rehypePlugins: [],
     // If you use `MDXProvider`, uncomment the following line.
     // providerImportSource: "@mdx-js/react",

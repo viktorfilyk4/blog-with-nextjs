@@ -1,0 +1,4 @@
+# by default .prettierignore inherits .gitignore
+
+# public static files which may be referenced by the user
+/public

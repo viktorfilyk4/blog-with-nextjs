@@ -99,11 +99,11 @@ import { HomeIcon } from 'react-feather'
 export default function Header() {
   return (
     <header>
-      <Link href="/">
+      <Link href='/'>
         <HomeIcon />
       </Link>
-      // If you want to add a Client Component here like a theme switcher, mark that
-      // component with "use client" and leave the majority of the header as an RSC
+      // If you want to add a Client Component here like a theme switcher, mark that // component with
+      "use client" and leave the majority of the header as an RSC
     </header>
   )
 }
@@ -129,10 +129,7 @@ With the header in place, you now have a nested layout for subpages and blog pos
 
 Let's go ahead and create our files and directories:
 
-<Note>
-  You can click any of the files in a file tree to view the source code on
-  GitHub.
-</Note>
+<Note>You can click any of the files in a file tree to view the source code on GitHub.</Note>
 
 <FileTree>
   <Folder name="app" open>
@@ -202,26 +199,26 @@ For our blog posts like this one, we'll want `/blog/[slug]` to be a page that di
 It sure seems like the footer should live inside the `/blog/[slug]` layout. The `[slug]` in the URL is referred to as a [Dynamic Segment](https://beta.nextjs.org/docs/routing/defining-routes#dynamic-segments).
 
 <FileTree>
-  <Folder name="blog" open>
-    <Folder name="[slug]" open>
-      <Folder name="components" open>
+  <Folder name='blog' open>
+    <Folder name='[slug]' open>
+      <Folder name='components' open>
         <File
-          name="footer.tsx"
-          type="component"
-          note="<BlogPostFooter />"
-          url="https://github.com/MaxLeiter/maxleiter.com/blob/master/app/(subpages)/blog/%5Bslug%5D/post/navigation.tsx"
+          name='footer.tsx'
+          type='component'
+          note='<BlogPostFooter />'
+          url='https://github.com/MaxLeiter/maxleiter.com/blob/master/app/(subpages)/blog/%5Bslug%5D/post/navigation.tsx'
         />
       </Folder>
       <File
-        name="layout.tsx"
-        type="layout"
-        note="renders <BlogPostFooter />"
-        url="https://github.com/MaxLeiter/maxleiter.com/blob/master/app/(subpages)/blog/%5Bslug%5D/layout.tsx"
+        name='layout.tsx'
+        type='layout'
+        note='renders <BlogPostFooter />'
+        url='https://github.com/MaxLeiter/maxleiter.com/blob/master/app/(subpages)/blog/%5Bslug%5D/layout.tsx'
       />
       <File
-        name="page.tsx"
-        type="page"
-        url="https://github.com/MaxLeiter/maxleiter.com/blob/master/app/(subpages)/blog/%5Bslug%5D/page.tsx"
+        name='page.tsx'
+        type='page'
+        url='https://github.com/MaxLeiter/maxleiter.com/blob/master/app/(subpages)/blog/%5Bslug%5D/page.tsx'
       />
     </Folder>
   </Folder>
@@ -268,7 +265,7 @@ export const getPosts = cache(async () => {
         }
 
         return { ...data, body: content } as Post
-      })
+      }),
   )
 })
 
@@ -367,18 +364,14 @@ import NextImage from 'next/image'
 export function MDXImage({
   src,
   alt,
-}: React.DetailedHTMLProps<
-  React.ImgHTMLAttributes<HTMLImageElement>,
-  HTMLImageElement
-> & {
+}: React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> & {
   src: string
   alt: string
 }) {
   let widthFromSrc, heightFromSrc
   const url = new URL(src, 'https://maxleiter.com')
   const widthParam = url.searchParams.get('w') || url.searchParams.get('width')
-  const heightParam =
-    url.searchParams.get('h') || url.searchParams.get('height')
+  const heightParam = url.searchParams.get('h') || url.searchParams.get('height')
   if (widthParam) {
     widthFromSrc = parseInt(widthParam)
   }
@@ -455,9 +448,9 @@ export default async function PostPage({
 }
 ```
 
-We can now render a post; that's pretty cool. 
+We can now render a post; that's pretty cool.
 
-We can optionally choose to build all of our posts at build time, 
+We can optionally choose to build all of our posts at build time,
 by adding `generateStaticParams` to the page:
 
 ```tsx
@@ -470,10 +463,9 @@ export async function generateStaticParams() {
 ```
 
 <Note>
-  If you think it's bad that we call `getPost` _and_ `getPosts()`, remember the
-  we wrapped `getPosts` in `cache`. `getPost` just calls
-  `getPosts`, so we're not making any unnecessary requests to the filesystem (or
-  wherever you're getting your posts from).
+  If you think it's bad that we call `getPost` _and_ `getPosts()`, remember the we wrapped
+  `getPosts` in `cache`. `getPost` just calls `getPosts`, so we're not making any unnecessary
+  requests to the filesystem (or wherever you're getting your posts from).
 </Note>
 
 ## SEO
@@ -510,9 +502,7 @@ export const metadata = {
     // Note that an official `app/` solution is coming soon.
     images: [
       {
-        url: `https://maxleiter.com/api/og?title=${encodeURIComponent(
-          "Max Leiter's site"
-        )}`,
+        url: `https://maxleiter.com/api/og?title=${encodeURIComponent("Max Leiter's site")}`,
         width: 1200,
         height: 630,
         alt: '',
@@ -589,13 +579,10 @@ import matter from 'gray-matter'
 
 const posts = fs
   .readdirSync(path.resolve(__dirname, '../posts/'))
-  .filter(
-    (file) => path.extname(file) === '.md' || path.extname(file) === '.mdx'
-  )
+  .filter((file) => path.extname(file) === '.md' || path.extname(file) === '.mdx')
   .map((file) => {
     const postContent = fs.readFileSync(`./posts/${file}`, 'utf8')
-    const { data, content }: { data: any; content: string } =
-      matter(postContent)
+    const { data, content }: { data: any; content: string } = matter(postContent)
     return { ...data, body: content }
   })
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
@@ -646,10 +633,10 @@ main()
 ## Deployment
 
 I use Vercel for deployments (I may be bias), but you can use any static site provider you want with a setup
-like this because it supports [static export](https://beta.nextjs.org/docs/configuring/static-export). 
+like this because it supports [static export](https://beta.nextjs.org/docs/configuring/static-export).
 
 ## Wrapping up
 
-I hope this post was helpful to you. 
+I hope this post was helpful to you.
 As a reminder, you can find the source code for this site [here](https://github.com/maxleiter/maxleiter.com).
 Please try to not think negatively of me for anything you find (but feel free to offer praise for anything you like).

@@ -1,6 +1,6 @@
-import { getPost } from "@/lib/get-posts"
-import { PostBody } from "../../../../components/app-router/blog/[slug]/post-body"
-import { notFound } from "next/navigation"
+import { getPost } from '@/lib/get-posts'
+import { BlogPostBody } from '@/components/BlogPostBody'
+import { notFound } from 'next/navigation'
 
 type BlogSlugPage = {
   params: { slug: string }
@@ -11,13 +11,13 @@ export default async function BlogSlugPage({ params }: BlogSlugPage) {
   if (!post) return notFound()
 
   return (
-    <main className="py-4">
+    <main>
       <section>
-        <div>
-          <span className="block py-8">{post.date}</span>
-        </div>
-        <h1 className="pb-8 text-4xl font-bold">{post.title}</h1>
-        <PostBody children={post.body}></PostBody>
+        <p className='block py-8'>{post.date}</p>
+        <h1 className='pb-8 text-4xl font-bold'>{post.title}</h1>
+        <article className='prose max-w-full pb-4 dark:prose-invert'>
+          <BlogPostBody>{post.body}</BlogPostBody>
+        </article>
       </section>
     </main>
   )

@@ -1,8 +1,7 @@
-import Link from "next/link"
-import Image from "next/image"
-import { MDXComponents } from "mdx/types"
-import { Code } from "bright"
-import NoteComponent from "@/components/mdx/note"
+import { MDXComponents } from 'mdx/types'
+import { Code } from 'bright'
+import Note from './Note'
+import Details from './Details'
 
 export const mdxComponents: MDXComponents = {
   // a: ({ children, ...props }) => {
@@ -18,6 +17,6 @@ export const mdxComponents: MDXComponents = {
   //   return <Image {...props} />
   // },
   pre: (props) => <Code {...props} />,
-  Note: NoteComponent,
-  // h1: (props) => <h1 {...props} className='text-xl' />
+  Note: Note,
+  Details: Details,
 }

@@ -6,9 +6,8 @@ date: May 15, 2022
 ---
 
 <Details summary={'Please read'}>
-  This post was written for the (now stable) beta Next.js middleware. If you
-  want your own analytics, I recommend looking at{' '}
-  <a href="https://vercel.com/analytics">Vercel's solution.</a>
+  This post was written for the (now stable) beta Next.js middleware. If you want your own
+  analytics, I recommend looking at <a href='https://vercel.com/analytics'>Vercel's solution.</a>
 </Details>
 
 This post starts with a brief introduction. If you want to jump down to the tutorial, click [here](/blog/supabase-next-analytics#how). You can also see the live updating views in action in the top right of this page! The analytics events themselves require no JavaScript and occur completely on the server thanks to the [new (in beta) Next.js middleware](https://nextjs.org/docs/advanced-features/middleware). If you have JavaScript enabled, the view count should live update thanks to Supabase Realtime. You can try it by opening the page in a new tab and eyeing the view count.
@@ -31,8 +30,8 @@ Coincidentally, Supabase [announced their Series B](https://techcrunch.com/2022/
 So far, I love everything about it except the dashboard: everything is _so slow_. Creating a new, unnamed SQL query can take 5 seconds:
 
 <video controls={true}>
-  <source src="/blog/supabase/slow.webm" type="video/webm" />
-  <source src="/blog/supabase/slow.mp4" type="video/mp4" />
+  <source src='/blog/supabase/slow.webm' type='video/webm' />
+  <source src='/blog/supabase/slow.mp4' type='video/mp4' />
 </video>
 
 Dashboard slowness aside, this tutorial will walk you through using Supabase and Next.js middleware to have live-updating view counts and server-side analytics.
@@ -70,9 +69,9 @@ Note that this tutorial expects you to already have a Next.js project. If you do
 4. Now, we need to add a stored procedure (AKA a stored SQL function we can call from the Supabase API). Navigate to the `Database` tab in the left nav bar and select the `Functions` menu item inside:
 
    <img
-     alt="A screenshot showing the functions menu item location in the sidebar"
-     src="/blog/supabase/sidebar-functions.png"
-     height="450px"
+     alt='A screenshot showing the functions menu item location in the sidebar'
+     src='/blog/supabase/sidebar-functions.png'
+     height='450px'
      style={{ margin: 'var(--gap)' }}
    />
 
@@ -143,16 +142,13 @@ Note that this tutorial expects you to already have a Next.js project. If you do
    ```javascript
    import { createClient } from '@supabase/supabase-js'
 
-   if (
-     !process.env.NEXT_PUBLIC_SUPABASE_URL ||
-     !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-   ) {
+   if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
      throw new Error('Missing env vars SUPABASE_URL or SUPABASE_ANON_KEY')
    }
 
    const publicClient = createClient(
      process.env.NEXT_PUBLIC_SUPABASE_URL,
-     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
    )
 
    export default publicClient
@@ -162,14 +158,12 @@ Note that this tutorial expects you to already have a Next.js project. If you do
    import { createClient } from '@supabase/supabase-js'
 
    if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-     throw new Error(
-       'Missing env vars SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY'
-     )
+     throw new Error('Missing env vars SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY')
    }
 
    const privateClient = createClient(
      process.env.SUPABASE_URL,
-     process.env.SUPABASE_SERVICE_ROLE_KEY
+     process.env.SUPABASE_SERVICE_ROLE_KEY,
    )
 
    export default privateClient
@@ -208,8 +202,7 @@ Note that this tutorial expects you to already have a Next.js project. If you do
      const pathname = req.nextUrl.pathname
      // we ignore running this middleware when the request is to a serverless function or a file in public/.
      // This is purely optional.
-     const isPageRequest =
-       !PUBLIC_FILE.test(pathname) && !pathname.startsWith('/api')
+     const isPageRequest = !PUBLIC_FILE.test(pathname) && !pathname.startsWith('/api')
 
      const sendAnalytics = async () => {
        const slug = pathname.slice(pathname.indexOf('/')) || '/'
