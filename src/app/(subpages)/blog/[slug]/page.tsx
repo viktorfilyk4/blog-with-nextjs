@@ -2,11 +2,11 @@ import { getPost } from '@/lib/get-posts'
 import { BlogPostBody } from '@/components/BlogPostBody'
 import { notFound } from 'next/navigation'
 
-type BlogSlugPage = {
+type BlogSlugPageProps = {
   params: { slug: string }
 }
 
-export default async function BlogSlugPage({ params }: BlogSlugPage) {
+export default async function BlogSlugPage({ params }: BlogSlugPageProps) {
   const post = await getPost(params.slug)
   if (!post) return notFound()
 

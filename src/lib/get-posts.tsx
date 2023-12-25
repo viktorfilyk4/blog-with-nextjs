@@ -62,6 +62,7 @@ export async function getNearbyPosts(currentPostSlug: string) {
 
 // sort posts by date of publication -> first item is newer post, last is oldest
 export function sortPostsByDate(posts: Array<Post>) {
+  // @ts-ignore
   return posts.toSorted((p1, p2) => new Date(p2.date).getTime() - new Date(p1.date).getTime())
 }
 
