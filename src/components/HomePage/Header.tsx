@@ -31,7 +31,7 @@ export default function Header() {
           <li className='flex'>
             <SocialIcon
               IconComponent={Rss}
-              url={`${process.env.DOMAIN}/feed.xml`}
+              url={`${process.env.WEBSITE_URL}/feed.xml`}
               tooltipText='RSS'
             />
           </li>
