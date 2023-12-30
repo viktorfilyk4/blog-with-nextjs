@@ -8,10 +8,44 @@ export default function AboutPage({}) {
   return (
     <main>
       <section>
-        <p className='py-4 text-lg dark:text-white'>
-          This site is built on the Next.js 13 App Directory and is deployed via Vercel. The icons
-          are from Feather Icons. You can view the source on GitHub.
-        </p>
+        <div className='py-4 text-lg dark:text-white'>
+          <p>
+            This site is built using{' '}
+            <a
+              href='https://maxleiter.com/blog/build-a-blog-with-nextjs-13'
+              target='_blank'
+              className='text-blue-500 hover:underline'
+            >
+              this tutorial
+            </a>
+            .
+          </p>
+          <p>
+            I didn&apos;t simply copy-paste it, but used the tutorial as a guide to built similar
+            website on my own.
+          </p>
+          <p>
+            This website is built only for teaching purposes and do not serve as my personal
+            portfolio.
+          </p>
+        </div>
+        <p>Technoligies/tools used:</p>
+        <ul className='list-disc px-8'>
+          <li>Next.js 14 (App router)</li>
+          <li>Typescript</li>
+          <li>Tailwind CSS</li>
+          <li>MDX</li>
+          <li>
+            <a
+              href='https://bright.codehike.org/'
+              target='_blank'
+              className='text-blue-500 hover:underline'
+            >
+              Bright
+            </a>
+          </li>
+          <li>and other...</li>
+        </ul>
       </section>
     </main>
   )
