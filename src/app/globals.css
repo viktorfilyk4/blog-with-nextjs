@@ -14,4 +14,8 @@
   .info-icon-custom > circle {
     @apply fill-white dark:fill-black;
   }
+
+  .link-primary {
+    @apply text-blue-500 hover:underline;
+  }
 }

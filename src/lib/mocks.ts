@@ -1,21 +1,21 @@
 export const projects = [
   {
-    title: 'Vercel AI SDK',
-    url: 'https://github.com',
+    title: 'Google',
+    url: 'https://google.com',
     badges: [
       { innerContent: 'Maintainer' },
       {
         innerContent: {
           starsCount: 4385,
-          url: 'https://github.com',
+          url: 'https://google.com',
         },
       },
     ],
-    description: 'Build AI-powered applications with React, Svelte, and Vue',
+    description: 'The best search engine in the internet.',
   },
   {
-    title: 'Drift',
-    url: 'https://google.com',
+    title: 'Github',
+    url: 'https://github.com',
     badges: [
       { innerContent: 'Creator' },
       {
@@ -25,12 +25,12 @@ export const projects = [
         },
       },
     ],
-    description: 'A self-hostable and open-source alternative to GitHub Gist and Pastebin.',
+    description: 'Share your code with others.',
   },
   {
-    title: 'X11 on iOS',
+    title: 'Apple',
     url: 'https://apple.com',
     badges: [{ innerContent: 'Creator' }],
-    description: 'Patched, compiled, and packaged X11 for iOS devices.',
+    description: 'The richest tech company in the world.',
   },
 ]

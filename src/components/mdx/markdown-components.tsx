@@ -7,12 +7,7 @@ import Link from 'next/link'
 export const mdxComponents: MDXComponents = {
   a: ({ children, ...props }) => {
     return (
-      <Link
-        {...props}
-        href={props.href || ''}
-        ref={undefined}
-        className='text-blue-500 hover:underline'
-      >
+      <Link {...props} href={props.href || ''} ref={undefined} className='link-primary'>
         {children}
       </Link>
     )

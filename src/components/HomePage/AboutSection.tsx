@@ -3,16 +3,13 @@ export default function AboutSection() {
     <section className='py-4'>
       <h3 className='pb-2 text-2xl font-bold dark:text-gray-200'>About me</h3>
       <p className='dark:text-gray-300'>
-        I live in Ukraine. Since 2017, I started learning software development at a university. I
-        worked as a full-stack developer in{' '}
-        <a
-          className='text-blue-500 hover:underline'
-          target='_blank'
-          href='https://wise-engineering.com/'
-        >
-          Wise Engineering
-        </a>{' '}
-        for 1 year.
+        Commodo aliquip id non velit consectetur do consectetur ex aliquip proident voluptate
+        labore. Pariatur sit officia laboris dolore. Ullamco voluptate consectetur eiusmod ex non
+        reprehenderit eu veniam laborum magna in. Aliquip mollit tempor nisi occaecat occaecat
+        dolore excepteur Lorem magna eu ea nostrud&nbsp;
+        <a className='link-primary' target='_blank' href='https://vercel.com/'>
+          Vercel
+        </a>
       </p>
     </section>
   )
