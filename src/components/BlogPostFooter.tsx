@@ -16,19 +16,23 @@ export default async function BlogPostFooter({ slug }: BlogPostFooterProps) {
       </p>
       <nav>
         <ul className='flex justify-between py-4 text-blue-500'>
-          {previousPost && (
+          {previousPost ? (
             <BlogPostFooterLink
               type='Older'
               title={previousPost.title}
               link={`/blog/${previousPost.slug}`}
             />
+          ) : (
+            <li></li>
           )}
-          {nextPost && (
+          {nextPost ? (
             <BlogPostFooterLink
               type='Newer'
               title={nextPost.title}
               link={`/blog/${nextPost.slug}`}
             />
+          ) : (
+            <li></li>
           )}
         </ul>
       </nav>
