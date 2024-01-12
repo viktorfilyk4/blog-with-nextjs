@@ -13,7 +13,7 @@ export default function ProjectsSection() {
       </ul>
       <div className='py-4 dark:text-gray-300'>
         See more on{' '}
-        <Link href='/projects' className='text-blue-500 hover:underline'>
+        <Link href='/projects' className='link-primary'>
           this page
         </Link>
       </div>

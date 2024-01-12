@@ -14,7 +14,7 @@ export default function AboutPage({}) {
             <a
               href='https://maxleiter.com/blog/build-a-blog-with-nextjs-13'
               target='_blank'
-              className='text-blue-500 hover:underline'
+              className='link-primary'
             >
               this tutorial
             </a>
@@ -36,11 +36,7 @@ export default function AboutPage({}) {
           <li>Tailwind CSS</li>
           <li>MDX</li>
           <li>
-            <a
-              href='https://bright.codehike.org/'
-              target='_blank'
-              className='text-blue-500 hover:underline'
-            >
+            <a href='https://bright.codehike.org/' target='_blank' className='link-primary'>
               Bright
             </a>
           </li>

@@ -12,7 +12,7 @@ export default function Project({ title, url, badges, description }: ProjectProp
   return (
     <li className='py-4'>
       <div className='flex flex-wrap items-center'>
-        <a href={url} className='block pr-2 text-xl font-bold text-blue-500 hover:underline'>
+        <a href={url} className='link-primary block pr-2 text-xl font-bold'>
           {title}
         </a>
         <div className='flex items-center gap-x-2'>
