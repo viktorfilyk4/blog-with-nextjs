@@ -4,12 +4,9 @@ export function getCurrentTime(): string {
   const minutes = now.getMinutes()
   const seconds = now.getUTCSeconds()
 
-  let modifiedSeconds
+  const q = (n: number) => (n.toString().length < 2 ? `0${n}` : n)
 
-  if (seconds.toString().length < 2) modifiedSeconds = `0${seconds}`
-  else modifiedSeconds = seconds
-
-  return `Ukraine: ${hours}:${minutes}:${modifiedSeconds} (GMT+2)`
+  return `Ukraine: ${q(hours)}:${q(minutes)}:${q(seconds)} (GMT+2)`
 }
 
 export function removeNullsFromArray<T>(arr: Array<T>) {
