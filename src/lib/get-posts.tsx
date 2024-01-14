@@ -15,8 +15,8 @@ export const getPosts = cache(async () => {
     posts
       .filter((file) => path.extname(file) === '.mdx')
       .map(async (file) => {
-        const filePath = `./posts/${file}`
-        const postContent = await fs.readFile(filePath, 'utf8')
+        const filePath = `/posts/${file}`
+        const postContent = await fs.readFile(process.cwd() + filePath, 'utf8')
         const { data, content } = matter(postContent)
 
         if (data.published === false) {
